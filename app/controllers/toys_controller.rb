@@ -4,6 +4,7 @@ class ToysController < ApplicationController
   def index
     toys = Toy.all
     render json: toys
+    
   end
 
   def create
@@ -14,6 +15,7 @@ class ToysController < ApplicationController
   def update
     toy = Toy.find_by(id: params[:id])
     toy.update(toy_params)
+    render json: toy
   end
 
   def destroy
